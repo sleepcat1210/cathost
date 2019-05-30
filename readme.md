@@ -58,4 +58,10 @@ If you discover a security vulnerability within Laravel, please send an e-mail t
 The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
 # cathost
 #1210
-#测试
+
+#项目是基于laravel框架搭建 主要业务围绕附近宠物诊所和商店  
+#项目主要有商店,商店信息展示 商店商品 优惠券 红包 分享 店主回答论坛信息 基于Lbs 基于Redis3.2 geo附近位置
+#论坛  会员注册发布养宠物遇到的问题,会员和店主参与解答 并引导会员进入店家商店,
+#博客 主要记录会员养宠物的点点滴滴生活细节 博主达到一定级别可以插入商店广告赚取费用
+#个人中心 商家中心
+#现价段处于开发阶段
