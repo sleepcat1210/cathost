@@ -5,7 +5,12 @@
         <group>
             <file>file:/D:/phpStudy2/PHPTutorial/WWW/laravel/resources/views/admin/goodsType/index.blade.php</file>
             <file>file:/D:/phpStudy2/PHPTutorial/WWW/laravel/routes/web.php</file>
-            <file>file:/D:/phpStudy2/PHPTutorial/WWW/laravel/resources/views/admin/goodsType/add.blade.php</file>
+            <file>file:/D:/phpStudy2/PHPTutorial/WWW/laravel/app/Models/GoodsCategory.php</file>
+            <file>file:/D:/phpStudy2/PHPTutorial/WWW/laravel/app/Models/GoodsType.php</file>
+            <file>file:/D:/phpStudy2/PHPTutorial/WWW/laravel/config/filesystems.php</file>
+            <file>file:/D:/phpStudy2/PHPTutorial/WWW/laravel/resources/views/admin/goodsType/edit.blade.php</file>
+            <file>file:/D:/phpStudy2/PHPTutorial/WWW/laravel/resources/views/admin/goodsCategory/edit.blade.php</file>
+            <file>file:/D:/phpStudy2/PHPTutorial/WWW/laravel/app/Http/Controllers/Admin/GoodsCategoryController.php</file>
             <file>file:/D:/phpStudy2/PHPTutorial/WWW/laravel/app/Http/Controllers/Admin/GoodsTypeController.php</file>
         </group>
     </open-files>

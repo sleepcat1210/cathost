@@ -25,7 +25,8 @@ Route::group(['prefix'=>'admin','namespace'=>'Admin'],function(){
             Route::get('type/edit/{goodsType}', 'GoodsTypeController@editType');
             Route::put('type/edit/{goodsType}', 'GoodsTypeController@update');
             Route::get('type/delete/{goodsType}', 'GoodsTypeController@delete');
-
+            //属性列表
+            Route::get('attribute/{goodsType}', 'AttributeController@index');
 });
 //Route::get('index', 'IndexController@index');
 //Route::get('user', 'UserController@user');
