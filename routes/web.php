@@ -17,6 +17,11 @@ Route::group(['prefix'=>'admin','namespace'=>'Admin'],function(){
             Route::put('goodscate/edit/{goodscategory}', 'GoodsCategoryController@update');
             //删除分类
             Route::get('goodscate/delete/{goodscategory}', 'GoodsCategoryController@delete');
+            //商品类型
+            Route::get('type', 'GoodsTypeController@index');
+            //添加
+            Route::get('type/add', 'GoodsTypeController@add');
+            Route::post('type/add', 'GoodsTypeController@insertType');
 
 });
 //Route::get('index', 'IndexController@index');
