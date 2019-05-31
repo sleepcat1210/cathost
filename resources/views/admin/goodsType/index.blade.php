@@ -36,7 +36,7 @@
                 </td>              
                 <td>{{$v->uid}}</td>
                 <td class="f-14">
-                    <a title="编辑" href="javascript:;" onclick="edit_category('编辑类型', '/admin/goodstype/edit/{{$v->id}}', '600')" style="text-decoration:none">
+                    <a title="编辑" href="javascript:;" onclick="edit_type('编辑类型', '/admin/type/edit/{{$v->id}}', '600')" style="text-decoration:none">
                         <i class="Hui-iconfont">&#xe6df;</i></a> 
                     <a title="删除" href="javascript:;" onclick="del_type(this, '{{$v->id}}')" class="ml-5" style="text-decoration:none">
                         <i class="Hui-iconfont">&#xe6e2;</i></a>
@@ -66,15 +66,15 @@
                                         layer_show(title, url, w, h);
                                     }
                                     /*管理员-角色-编辑*/
-                                    function edit_category(title, url, id, w, h) {
+                                    function edit_type(title, url, id, w, h) {
                                         layer_show(title, url, w, h);
                                     }
                                     /*管理员-角色-删除*/
-                                    function del_category(obj, id) {
+                                    function del_type(obj, id) {
                                         layer.confirm('分类删除须谨慎，确认要删除吗？', function (index) {
                                             $.ajax({
                                                 type: 'get',
-                                                url: '/admin/goodscate/delete/'+id,
+                                                url: '/admin/type/delete/'+id,
                                                 dataType: 'json',
                                                 success: function (data) {
                                                     if(data.success){

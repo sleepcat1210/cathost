@@ -33,4 +33,31 @@ class GoodsTypeController extends Controller
        $goods_type->save();
        return redirect("admin/type/add");
     }
+    //编辑商品类型
+    public function editType(GoodsType $goodsType){
+         $data=$goodsType->get();
+        $type= getTree($data,0);        
+        return view("admin.goodsType.edit",  compact('type','goodsType'));
+    }
+     public function update(GoodsType $goodsType){
+       $goodsType->type_name=request('type_name');
+       $goodsType->pid=request('pid');     
+       $result=$goodsType->update();
+       if($result){
+           $array=array('success'=>true);
+       }else{
+         $array=array('success'=>false);   
+       }
+       return $array;
+    }
+    public function delete(GoodsType $goodsType) {   
+
+        if($goodsType->childer()->count()){
+            $array=array('success'=>false,'msg'=>'请先删除下级分类！');  
+        }else{        
+             $goodsType->delete();
+             $array=array('success'=>true,'msg'=>'删除成功！');  
+        }
+       return   $array;
+    }
 }

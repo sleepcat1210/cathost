@@ -22,6 +22,9 @@ Route::group(['prefix'=>'admin','namespace'=>'Admin'],function(){
             //添加
             Route::get('type/add', 'GoodsTypeController@add');
             Route::post('type/add', 'GoodsTypeController@insertType');
+            Route::get('type/edit/{goodsType}', 'GoodsTypeController@editType');
+            Route::put('type/edit/{goodsType}', 'GoodsTypeController@update');
+            Route::get('type/delete/{goodsType}', 'GoodsTypeController@delete');
 
 });
 //Route::get('index', 'IndexController@index');
