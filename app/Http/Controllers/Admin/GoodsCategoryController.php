@@ -10,7 +10,7 @@ class GoodsCategoryController extends Controller
     public function index() {
         $goodsCategory=new GoodsCategory;
         $data=$goodsCategory->with(['parent'])->get();
-        $goodscate= getTree($data,0);          
+        $goodscate= getTree($data,0); 
         return view("admin.goodsCategory.index",  compact('goodscate'));
     }
     //添加产品分类
