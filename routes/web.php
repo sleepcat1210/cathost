@@ -27,6 +27,8 @@ Route::group(['prefix'=>'admin','namespace'=>'Admin'],function(){
             Route::get('type/delete/{goodsType}', 'GoodsTypeController@delete');
             //属性列表
             Route::get('attribute/{goodsType}', 'AttributeController@index');
+            Route::get('attribute/add/{goodsType}', 'AttributeController@addAttr');
+            Route::post('attribute/add', 'AttributeController@insertAttr');
 });
 //Route::get('index', 'IndexController@index');
 //Route::get('user', 'UserController@user');

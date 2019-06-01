@@ -20,9 +20,6 @@
                         @foreach($goodscate as $k =>$v)
                         <option value="{{$v->id}}">{!!str_repeat('&nbsp&nbsp&nbsp&nbsp',$v->level)!!}├{{$v->category_name}}</option>
                         @endforeach
-<!--                        <option value="11">├二级分类</option>
-                        <option value="12">├二级分类</option>
-                        <option value="13">├二级分类</option>-->
                     </select>
                 </span> </div>
             <span style='color:red'>{{$errors->first('pid')}}</span>
@@ -33,7 +30,6 @@
                 <div class="uploader-thum-container">
                     <div id="fileList" class="uploader-list"></div>
                     <div id="filePicker">选择图片</div>
-<!--                    <button id="btn-star" class="btn btn-default btn-uploadstar radius ml-10">开始上传</button>-->
                 </div>
                    <div class="formControls col-xs-6 col-sm-6">
            <span style='color:red'>{{$errors->first('img')}}</span>
