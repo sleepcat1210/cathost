@@ -165,6 +165,8 @@ return [
         Illuminate\View\ViewServiceProvider::class,
         //七牛云
         zgldh\QiniuStorage\QiniuFilesystemServiceProvider::class,
+        //debugbar
+        Barryvdh\Debugbar\ServiceProvider::class,
         /*
          * Package Service Providers...
          */
@@ -226,6 +228,8 @@ return [
         'URL' => Illuminate\Support\Facades\URL::class,
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
+         'Debugbar' => Barryvdh\Debugbar\Facade::class,
+
 
     ],
 
