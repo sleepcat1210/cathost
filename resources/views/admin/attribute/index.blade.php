@@ -79,16 +79,16 @@
                                                 function add_attr(title, url, w, h) {
                                                 layer_show(title, url, w, h);
                                                 }
-                                        /*管理员-角色-编辑*/
-                                        function edit_category(title, url, id, w, h) {
+                                        /*属性-编辑*/
+                                        function edit_attr(title, url, id, w, h) {
                                         layer_show(title, url, w, h);
                                         }
-                                        /*管理员-角色-删除*/
-                                        function del_category(obj, id) {
-                                        layer.confirm('分类删除须谨慎，确认要删除吗？', function (index) {
+                                        /*属性-删除*/
+                                        function del_attr(obj, id) {
+                                        layer.confirm('确认要删除吗？', function (index) {
                                         $.ajax({
                                         type: 'get',
-                                                url: '/admin/goodscate/delete/' + id,
+                                                url: '/admin/attribute/delete/' + id,
                                                 dataType: 'json',
                                                 success: function (data) {
                                                 if (data.success){

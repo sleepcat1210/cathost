@@ -6,43 +6,84 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Models\GoodsType;
 use App\Models\Attribute;
-class AttributeController extends Controller
-{
+
+class AttributeController extends Controller {
+
     public function index(GoodsType $goodsType) {
-        $attr=  Attribute::where('cat_id',$goodsType->id)->orderby('id','desc')->with('goodsType')->get();
-        foreach($attr as &$v){
-            $v['attr_values']= str_replace("\n", ", ", $v['attr_values']);
+        $attr = Attribute::where('cat_id', $goodsType->id)->orderby('id', 'desc')->with('goodsType')->get();
+        foreach ($attr as &$v) {
+            $v['attr_values'] = str_replace("\n", ", ", $v['attr_values']);
         }
-        return view('admin.attribute.index',  compact('goodsType','attr'));
+        return view('admin.attribute.index', compact('goodsType', 'attr'));
     }
+
     //添加属性
     public function addAttr(GoodsType $goodsType) {
-        $data=$goodsType->get();
-        $type= getTree($data,0);
-        return view('admin.attribute.addAttr',  compact('goodsType','type'));
+        $data = $goodsType->get();
+        $type = getTree($data, 0);
+        return view('admin.attribute.addAttr', compact('goodsType', 'type'));
     }
+
     //插入
-    public function insertAttr(Request $request) {       
-         $request->validate([
-           'attr_name'=>'required|max:60',
-           'cat_id'=>'required',          
-           'attr_index'=>'required',          
-           'attr_type'=>'required',          
-           'attr_input_type'=>'required',          
-       ]);
-        $attr =new Attribute();
-        $attr->attr_name=request('attr_name');
-        $attr->cat_id=request('cat_id');
-        $attr->attr_index=request('attr_index');
-        $attr->attr_type=request('attr_type');
-        $attr->attr_input_type=request('attr_input_type');
-        $attr->attr_values=request('attr_values');
-        $result=$attr->save();
-        if($result){
-           $array=array('success'=>true);
-       }else{
-         $array=array('success'=>false);   
-       }
-       return $array;
+    public function insertAttr(Request $request) {
+        $request->validate([
+            'attr_name' => 'required|max:60',
+            'cat_id' => 'required',
+            'attr_index' => 'required',
+            'attr_type' => 'required',
+            'attr_input_type' => 'required',
+        ]);
+        $attr = new Attribute();
+        $attr->attr_name = request('attr_name');
+        $attr->cat_id = request('cat_id');
+        $attr->attr_index = request('attr_index');
+        $attr->attr_type = request('attr_type');
+        $attr->attr_input_type = request('attr_input_type');
+        $attr->attr_values = request('attr_values');
+        $result = $attr->save();
+        if ($result) {
+            $array = array('success' => true);
+        } else {
+            $array = array('success' => false);
+        }
+        return $array;
     }
+
+    //编辑属性
+    public function editAttr(Attribute $attr, Request $request) {
+        $goodsType = new GoodsType();
+        $data = $goodsType->get();
+        $type = getTree($data, 0);
+        return view('admin/attribute/editAttr', compact('type', 'attr'));
+    }
+
+    public function updateAttr(Attribute $attr, Request $request) {
+        $request->validate([
+            'attr_name' => 'required|max:60',
+            'cat_id' => 'required',
+            'attr_index' => 'required',
+            'attr_type' => 'required',
+            'attr_input_type' => 'required',
+        ]);
+        $attr->attr_name = request('attr_name');
+        $attr->cat_id = request('cat_id');
+        $attr->attr_index = request('attr_index');
+        $attr->attr_type = request('attr_type');
+        $attr->attr_input_type = request('attr_input_type');
+        $attr->attr_values = request('attr_values');
+        $result = $attr->update();
+        if ($result) {
+            $array = array('success' => true);
+        } else {
+            $array = array('success' => false);
+        }
+        return $array;
+    }
+
+    public function delete(Attribute $attr) {
+        $attr->delete();
+        $array = array('success' => true, 'msg' => '删除成功！');
+        return $array;
+    }
+
 }

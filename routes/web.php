@@ -1,8 +1,5 @@
 <?php
 
-//Route::get('/', function () {
-//    return view('welcome');
-//});
 //后台
 Route::group(['prefix'=>'admin','namespace'=>'Admin'],function(){
            Route::get('/', 'IndexController@index');
@@ -29,6 +26,9 @@ Route::group(['prefix'=>'admin','namespace'=>'Admin'],function(){
             Route::get('attribute/{goodsType}', 'AttributeController@index');
             Route::get('attribute/add/{goodsType}', 'AttributeController@addAttr');
             Route::post('attribute/add', 'AttributeController@insertAttr');
+            Route::get('attribute/edit/{attr}', 'AttributeController@editAttr');
+            Route::put('attribute/edit/{attr}', 'AttributeController@updateAttr');
+            Route::get('attribute/delete/{attr}', 'AttributeController@delete');
 });
 //Route::get('index', 'IndexController@index');
 //Route::get('user', 'UserController@user');
