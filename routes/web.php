@@ -29,6 +29,9 @@ Route::group(['prefix'=>'admin','namespace'=>'Admin'],function(){
             Route::get('attribute/edit/{attr}', 'AttributeController@editAttr');
             Route::put('attribute/edit/{attr}', 'AttributeController@updateAttr');
             Route::get('attribute/delete/{attr}', 'AttributeController@delete');
+            //商品管理
+            Route::get('goods','GoodsController@index');
+            Route::get('goods/add','GoodsController@addGoods');
 });
 //Route::get('index', 'IndexController@index');
 //Route::get('user', 'UserController@user');

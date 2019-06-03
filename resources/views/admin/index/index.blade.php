@@ -67,6 +67,7 @@
 			<dd>
 				<ul>
 					<li><a data-href="product-brand.html" data-title="品牌管理" href="javascript:void(0)">品牌管理</a></li>
+					<li><a data-href="/admin/goods" data-title="商品管理" href="javascript:void(0)">商品管理</a></li>
 					<li><a data-href="/admin/goodscate" data-title="商品分类" href="javascript:void(0)">商品分类</a></li>
 					<li><a data-href="/admin/type" data-title="商品类型" href="javascript:void(0)">商品类型</a></li>
 			</ul>
