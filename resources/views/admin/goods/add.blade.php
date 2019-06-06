@@ -168,42 +168,37 @@
 		</div>
             </div>
             <div class="tabCon">
-                <div class="row cl">
-                    <label class="form-label col-xs-4 col-sm-2">邮件发送模式：</label>
-                    <div class="formControls col-xs-8 col-sm-9">
-                        <input type="text"  class="input-text" value="" id="" name="">
-                    </div>
-                </div>
-                <div class="row cl">
-                    <label class="form-label col-xs-4 col-sm-2">SMTP服务器：</label>
-                    <div class="formControls col-xs-8 col-sm-9">
-                        <input type="text" id="" value="" class="input-text">
-                    </div>
-                </div>
-                <div class="row cl">
-                    <label class="form-label col-xs-4 col-sm-2">SMTP 端口：</label>
-                    <div class="formControls col-xs-8 col-sm-9">
-                        <input type="text" class="input-text" value="25" id="" name="" >
-                    </div>
-                </div>
-                <div class="row cl">
-                    <label class="form-label col-xs-4 col-sm-2">邮箱帐号：</label>
-                    <div class="formControls col-xs-8 col-sm-9">
-                        <input type="text" class="input-text" value="5" id="emailName" name="emailName" >
-                    </div>
-                </div>
-                <div class="row cl">
-                    <label class="form-label col-xs-4 col-sm-2">邮箱密码：</label>
-                    <div class="formControls col-xs-8 col-sm-9">
-                        <input type="password" id="email-password" value="" class="input-text">
-                    </div>
-                </div>
-                <div class="row cl">
-                    <label class="form-label col-xs-4 col-sm-2">收件邮箱地址：</label>
-                    <div class="formControls col-xs-8 col-sm-9">
-                        <input type="text" id="email-address" value="" class="input-text">
-                    </div>
-                </div>
+                     <dl class="row">
+                        <div class="tab-pane" id="tab_goods_spec">
+                            <table class="table table-bordered  table-bg table-sort" id="goods_spec_table">                                
+                                <tr>
+                                    <td>商品类型:</td>
+                                    <td>
+                                    <span class="select-box col-xs-3 col-sm-2">                                        
+                                      <select name="goods_type" id="spec_type" class=" select" style="width:250px;">
+                                        <option value="0">选择商品类型</option>                                        
+                                        @foreach($type as $k=>$v)
+                                        <option value="{{$v->id}}" >{{$v->type_name}}</option>   
+                                        @endforeach
+                                      </select>
+                                    </span>
+                                    </td>
+                                </tr>                            
+                            </table>
+                            <div class="row">
+                            	<!-- ajax 返回规格-->
+                            	<div id="ajax_spec_data" class="col-xs-8" ></div>
+                            	<div id="" class="col-xs-4" >
+                            	    <table class="table table-bordered" id="goods_attr_table">                                
+		                                <tr>
+		                                    <td><b>商品属性</b>：</td>
+		                                </tr>                                
+		                            </table>
+                            	</div>
+                            </div>
+                        </div>
+                
+            </dl> 
             </div>
 
         </div>
@@ -788,6 +783,48 @@ $(function(){
 	});
       
 });    // 当domReady的时候开始初始化
+</script>
+<script type="text/javascript">
+    /** 以下 商品规格相关 js*/
+$(document).ready(function(){	
+    // 商品模型切换时 ajax 调用  返回不同的属性输入框
+    $("#spec_type").change(function(){        
+        var goods_id = '';
+        var spec_type = $(this).val();
+            $.ajax({
+                    type:'GET',
+                    data:{goods_id:goods_id,spec_type:spec_type}, 
+                    url:"/admin/goods/ajaxSpac",
+                    success:function(data){                            
+                           $("#ajax_spec_data").html('')
+                           $("#ajax_spec_data").append(data);
+			   ajaxGetSpecInput();
+                    }
+            });           
+            //商品类型切换时 ajax 调用  返回不同的属性输入框     
+            $.ajax({
+                 type:'GET',
+                 data:{goods_id:goods_id,type_id:spec_type}, 
+                 url:"/admin/goods/ajaxAttr",
+                 success:function(data){                            
+                         $("#goods_attr_table tr:gt(0)").remove()
+                         $("#goods_attr_table").append(data);
+                 }        
+           });
+    });
+	// 触发商品规格
+	$("#spec_type").trigger('change'); 
+	
+    $("input[name='exchange_integral']").blur(function(){
+        var shop_price = parseInt($("input[name='shop_price']").val());
+        var exchange_integral = parseInt($(this).val());
+        if (shop_price * 100 < exchange_integral) {
+        	
+        }
+    });
+});
+
+
 </script>
 
 @endsection

@@ -32,6 +32,10 @@ Route::group(['prefix'=>'admin','namespace'=>'Admin'],function(){
             //商品管理
             Route::get('goods','GoodsController@index');
             Route::get('goods/add','GoodsController@addGoods');
+            //获取商品属性
+            Route::get('goods/ajaxSpac','GoodsController@ajaxGetGoodsSpac');
+            Route::get('goods/ajaxAttr','GoodsController@ajaxGetGoodsAttr');
+            Route::post('goods/ajaxSpac','GoodsController@ajaxGetSpecInput');
 });
 //Route::get('index', 'IndexController@index');
 //Route::get('user', 'UserController@user');
