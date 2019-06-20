@@ -36,6 +36,7 @@ Route::group(['prefix'=>'admin','namespace'=>'Admin'],function(){
             Route::get('goods/ajaxSpac','GoodsController@ajaxGetGoodsSpac');
             Route::get('goods/ajaxAttr','GoodsController@ajaxGetGoodsAttr');
             Route::post('goods/ajaxSpac','GoodsController@ajaxGetSpecInput');
+            Route::post('goods/add','GoodsController@insertGoods');
 });
 //Route::get('index', 'IndexController@index');
 //Route::get('user', 'UserController@user');
@@ -52,6 +53,8 @@ Route::group(['prefix'=>'admin','namespace'=>'Admin'],function(){
 ////删除文章
 //Route::get('posts/delete/{posts}', 'PostsController@delete');
 Route::post('posts/image/upload', 'PostsController@uploadImg');
+Route::get('api/v1/index','Api\V1\IndexController@index')->middleware('token');
+Route::get('api/v1/login','Api\V1\IndexController@login');
 ////发表评论
 //Route::post('posts/comments', 'PostsController@comments');
 ////注册页面

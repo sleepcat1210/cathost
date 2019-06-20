@@ -3,13 +3,16 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/D:/phpStudy2/PHPTutorial/WWW/laravel/public/admin/lib/webuploader/0.1.5/webuploader.css</file>
-            <file>file:/D:/phpStudy2/PHPTutorial/WWW/laravel/app/Http/Controllers/Admin/GoodsController.php</file>
+            <file>file:/D:/phpStudy2/PHPTutorial/WWW/laravel/vendor/firebase/php-jwt/src/SignatureInvalidException.php</file>
+            <file>file:/D:/phpStudy2/PHPTutorial/WWW/laravel/app/Http/Middleware/TrustProxies.php</file>
             <file>file:/D:/phpStudy2/PHPTutorial/WWW/laravel/routes/web.php</file>
-            <file>file:/D:/phpStudy2/PHPTutorial/WWW/laravel/resources/views/admin/index/index.blade.php</file>
-            <file>file:/D:/phpStudy2/PHPTutorial/WWW/laravel/resources/views/admin/attribute/index.blade.php</file>
-            <file>file:/D:/phpStudy2/PHPTutorial/WWW/laravel/resources/views/admin/goods/add.blade.php</file>
-            <file>file:/D:/phpStudy2/PHPTutorial/WWW/laravel/app/Models/Goods.php</file>
+            <file>file:/D:/phpStudy2/PHPTutorial/WWW/laravel/app/Http/Controllers/Admin/IndexController.php</file>
+            <file>file:/D:/phpStudy2/PHPTutorial/WWW/laravel/app/Http/Middleware/RedirectIfAuthenticated.php</file>
+            <file>file:/D:/phpStudy2/PHPTutorial/WWW/laravel/app/Http/Middleware/EncryptCookies.php</file>
+            <file>file:/D:/phpStudy2/PHPTutorial/WWW/laravel/app/Http/Middleware/VerifyCsrfToken.php</file>
+            <file>file:/D:/phpStudy2/PHPTutorial/WWW/laravel/vendor/firebase/php-jwt/src/JWT.php</file>
+            <file>file:/D:/phpStudy2/PHPTutorial/WWW/laravel/app/Http/Middleware/CheckToken.php</file>
+            <file>file:/D:/phpStudy2/PHPTutorial/WWW/laravel/app/Http/Controllers/Api/V1/IndexController.php</file>
         </group>
     </open-files>
 </project-private>

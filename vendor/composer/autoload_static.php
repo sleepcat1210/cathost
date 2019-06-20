@@ -106,6 +106,7 @@ class ComposerStaticInit98c92c86a883f1c693e1df929de7c917
         ),
         'F' => 
         array (
+            'Firebase\\JWT\\' => 13,
             'Fideloper\\Proxy\\' => 16,
             'Faker\\' => 6,
         ),
@@ -298,6 +299,10 @@ class ComposerStaticInit98c92c86a883f1c693e1df929de7c917
         array (
             0 => __DIR__ . '/..' . '/laravel/framework/src/Illuminate',
         ),
+        'Firebase\\JWT\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/firebase/php-jwt/src',
+        ),
         'Fideloper\\Proxy\\' => 
         array (
             0 => __DIR__ . '/..' . '/fideloper/proxy/src',
@@ -381,6 +386,7 @@ class ComposerStaticInit98c92c86a883f1c693e1df929de7c917
         'App\\Exceptions\\Handler' => __DIR__ . '/../..' . '/app/Exceptions/Handler.php',
         'App\\Http\\Controllers\\Admin\\AttributeController' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/AttributeController.php',
         'App\\Http\\Controllers\\Admin\\GoodsCategoryController' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/GoodsCategoryController.php',
+        'App\\Http\\Controllers\\Admin\\GoodsController' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/GoodsController.php',
         'App\\Http\\Controllers\\Admin\\GoodsTypeController' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/GoodsTypeController.php',
         'App\\Http\\Controllers\\Admin\\IndexController' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/IndexController.php',
         'App\\Http\\Controllers\\Auth\\ForgotPasswordController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/ForgotPasswordController.php',
@@ -406,6 +412,7 @@ class ComposerStaticInit98c92c86a883f1c693e1df929de7c917
         'App\\Http\\Models\\Users' => __DIR__ . '/../..' . '/app/Http/Models/Users.php',
         'App\\Http\\Models\\Zans' => __DIR__ . '/../..' . '/app/Http/Models/Zans.php',
         'App\\Models\\Attribute' => __DIR__ . '/../..' . '/app/Models/Attribute.php',
+        'App\\Models\\Goods' => __DIR__ . '/../..' . '/app/Models/Goods.php',
         'App\\Models\\GoodsCategory' => __DIR__ . '/../..' . '/app/Models/GoodsCategory.php',
         'App\\Models\\GoodsType' => __DIR__ . '/../..' . '/app/Models/GoodsType.php',
         'App\\Policies\\PostsPolicy' => __DIR__ . '/../..' . '/app/Policies/PostsPolicy.php',
@@ -1073,6 +1080,10 @@ class ComposerStaticInit98c92c86a883f1c693e1df929de7c917
         'File_Iterator' => __DIR__ . '/..' . '/phpunit/php-file-iterator/src/Iterator.php',
         'File_Iterator_Facade' => __DIR__ . '/..' . '/phpunit/php-file-iterator/src/Facade.php',
         'File_Iterator_Factory' => __DIR__ . '/..' . '/phpunit/php-file-iterator/src/Factory.php',
+        'Firebase\\JWT\\BeforeValidException' => __DIR__ . '/..' . '/firebase/php-jwt/src/BeforeValidException.php',
+        'Firebase\\JWT\\ExpiredException' => __DIR__ . '/..' . '/firebase/php-jwt/src/ExpiredException.php',
+        'Firebase\\JWT\\JWT' => __DIR__ . '/..' . '/firebase/php-jwt/src/JWT.php',
+        'Firebase\\JWT\\SignatureInvalidException' => __DIR__ . '/..' . '/firebase/php-jwt/src/SignatureInvalidException.php',
         'Hamcrest\\Arrays\\IsArray' => __DIR__ . '/..' . '/hamcrest/hamcrest-php/hamcrest/Hamcrest/Arrays/IsArray.php',
         'Hamcrest\\Arrays\\IsArrayContaining' => __DIR__ . '/..' . '/hamcrest/hamcrest-php/hamcrest/Hamcrest/Arrays/IsArrayContaining.php',
         'Hamcrest\\Arrays\\IsArrayContainingInAnyOrder' => __DIR__ . '/..' . '/hamcrest/hamcrest-php/hamcrest/Hamcrest/Arrays/IsArrayContainingInAnyOrder.php',

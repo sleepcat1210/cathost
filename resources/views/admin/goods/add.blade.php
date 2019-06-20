@@ -14,7 +14,7 @@
     <a class="btn btn-success radius r" style="line-height:1.6em;margin-top:3px" href="javascript:location.replace(location.href);" title="刷新" ><i class="Hui-iconfont">&#xe68f;</i></a>
 </nav>
 <div class="page-container">
-    <form class="form form-horizontal" id="form-article-add">
+    <form  action="/admin/goods/add" class="form form-horizontal" method="post" >
         <div id="tab-system" class="HuiTab">
             <div class="tabBar cl">
                 <span>通用信息</span>
@@ -202,6 +202,7 @@
             </div>
 
         </div>
+        {{csrf_field()}}
         <div class="row cl">
             <div class="col-xs-8 col-sm-9 col-xs-offset-4 col-sm-offset-2">
                 <button onClick="article_save_submit();" class="btn btn-primary radius" type="submit"><i class="Hui-iconfont">&#xe632;</i> 保存</button>

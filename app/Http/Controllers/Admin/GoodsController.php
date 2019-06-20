@@ -31,6 +31,7 @@ class GoodsController extends Controller
         return view('admin.goods.ajax_spac',  compact('goods_attr'));
 //        return $goods_attr;
     }
+    
     //获取商品规格属性
     public function ajaxGetGoodsAttr() {
         $cat_id=  request('type_id');       
@@ -38,9 +39,8 @@ class GoodsController extends Controller
          $goods_attr=$attr->getAttrInput($cat_id);         
          return $goods_attr;
     }
-    //获取商品属性库存
-    public function ajaxGetSpecInput() {
-        $spec_arr=  request('spec_arr');
-        dd($spec_arr);
+    //添加商品
+    public function insertGoods() {
+        dd(request());
     }
 }
