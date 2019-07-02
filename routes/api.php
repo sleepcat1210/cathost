@@ -16,3 +16,7 @@ use Illuminate\Http\Request;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+Route::get('/position/{geohash}','Api\V1\IndexController@position');
+Route::get('/index_category','Api\V1\IndexController@category');
+Route::get('/shops','Api\V1\IndexController@shops');
+Route::get('/captcha','Api\V1\IndexController@captcha');

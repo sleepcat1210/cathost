@@ -55,6 +55,7 @@ Route::group(['prefix'=>'admin','namespace'=>'Admin'],function(){
 Route::post('posts/image/upload', 'PostsController@uploadImg');
 Route::get('api/v1/index','Api\V1\IndexController@index')->middleware('token');
 Route::get('api/v1/login','Api\V1\IndexController@login');
+
 ////发表评论
 //Route::post('posts/comments', 'PostsController@comments');
 ////注册页面
